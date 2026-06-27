@@ -5,7 +5,7 @@
 DsergMod is a client-side Fabric mod for visual clarity and quality-of-life tweaks. It injects all behavior changes through **Mixins**, which means there is no server-side component.
 It works out of the box on any compatible Fabric installation.
 
-> **Supported version:** Minecraft **1.21.11** · **Fabric Loader ≥ 0.19.3** · **Java 25+** · requires **Fabric API**
+> **Supported version:** Minecraft **1.21.11** · **Fabric Loader ≥ 0.19.3** · **Java 21+** · requires **Fabric API**
 
 ## ⬇️ Download
 
@@ -69,13 +69,7 @@ This repository ships the compiled mod only. The full source is available upstre
 ./gradlew runClient   # launches a dev Minecraft instance under run/
 ```
 
-> **Java 25+ JDK required** on the build PATH (`options.release = 25` in `build.gradle.kts`).
-
-## 📸 Screenshots
-
-![](https://i.imgur.com/CIdyeb7.png)
-
-![](https://i.imgur.com/07NFlrz.png)
+> **Java 21+ JDK required** on the build PATH (`options.release = 21` in `build.gradle.kts`).
 
 ---
 
