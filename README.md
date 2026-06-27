@@ -28,6 +28,7 @@ Grab the latest `dsergmod-1.2.jar` from the [Releases](https://github.com/disser
 - Toggle the camera shake when taking damage
 - Countdown timer above primed TNT
 - Durability percentage text on damaged items
+- Combined armor durability percentage shown above any entity wearing armor
 
 ## Configuration
 
