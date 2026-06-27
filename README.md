@@ -1,80 +1,39 @@
 # DsergMod
 
-![Minecraft](https://img.shields.io/badge/Minecraft-1.21.11-brightgreen) ![Loader](https://img.shields.io/badge/Fabric-Loader%20%E2%89%A50.19.3-blue) ![License](https://img.shields.io/badge/License-LGPL--3.0-orange)
+A lightweight client-side Fabric mod for Minecraft 1.21.11. It's a collection of small visual and quality-of-life tweaks, all toggleable in-game. Everything runs through Mixins, so there's no server-side component.
 
-DsergMod is a client-side Fabric mod for visual clarity and quality-of-life tweaks. It injects all behavior changes through **Mixins**, which means there is no server-side component.
-It works out of the box on any compatible Fabric installation.
+Requires Fabric Loader 0.19.3+, Java 21+, and Fabric API. Mod Menu is optional (adds a config entry).
 
-> **Supported version:** Minecraft **1.21.11** · **Fabric Loader ≥ 0.19.3** · **Java 21+** · requires **Fabric API**
+## Download
 
-## ⬇️ Download
+Grab the latest `dsergmod-1.2.jar` from the [Releases](https://github.com/dissering/DsergMod/releases/latest) page and drop it in your `mods` folder.
 
-Grab the latest `dsergmod-<version>.jar` from the [**Releases**](https://github.com/dissering/DsergMod/releases/latest) page and drop it in your `mods/` folder.
+## Features
 
-## ✨ Features
+- Fullbright with a configurable brightness multiplier
+- Remove the night vision pulsing effect
+- Toggle the carved-pumpkin overlay blur
+- Adjustable first-person fire and shield height
+- Keep filled maps visible while riding boats
+- Toggle lava, powder snow, blindness, darkness, water, and atmospheric fog individually
+- Per-item scaling in first person (totems, potions, food, etc.)
+- Fix shield position during riptide use
+- Use the F3+F4 gamemode switcher without operator permissions
+- Toggle the screen-corner vignette
+- Toggle the spyglass overlay while keeping the zoom
+- Switch to third person automatically during elytra flight
+- Toggle the scoreboard sidebar
+- Toggle entity shadows
+- Toggle rain and snow rendering
+- Toggle the camera shake when taking damage
+- Countdown timer above primed TNT
+- Durability percentage text on damaged items
 
-| Feature                         | Description                                                                                           |
-|---------------------------------|-------------------------------------------------------------------------------------------------------|
-| 🌟 **Fullbright**               | Scales in-game brightness via a configurable multiplier.                                              |
-| 👁️ **Night vision cleanup**    | Suppresses the night vision effect.                                                                   |
-| 🎃 **Pumpkin blur toggle**      | Disables the carved-pumpkin overlay blur.                                                             |
-| 🔥 **Low fire**                 | Configurable first-person fire overlay offset.                                                        |
-| 🛡️ **Low shield**              | Configurable first-person shield render offset.                                                       |
-| 🗺️ **Boat map visibility**     | Keep filled maps visible while moving in boats.                                                       |
-| 🌫️ **Fog controls**            | Toggle lava, powder snow, blindness, darkness, water, and atmospheric fog.                            |
-| 📐 **Item scaling**             | Scale individual items (totems, potions, food, etc.) in first-person view via a dedicated sub-screen. |
-| 🌊 **Riptide + shield fix**     | Corrects shield rendering position during riptide use.                                                |
-| 🎮 **No-OP gamemode switcher**  | Enables the debug gamemode-switch screen without OP-level checks.                                     |
-| 🕶️ **Vignette control**         | Toggle the dark vignette around screen corners.                                                       |
-| 🔍 **Spyglass overlay toggle**  | Toggle the black spyglass overlay while keeping zoom.                                                 |
-| ✈️ **Auto third person elytra** | Automatically switch to third person during Elytra flight.                                             |
-| 📋 **Scoreboard visibility**    | Toggle display of the scoreboard sidebar.                                                            |
-| 👥 **Entity shadows**           | Toggle entity shadows for an FPS boost.                                                               |
-| 🌧️ **Weather rendering**        | Toggle rain and snow client-side for performance improvement.                                        |
-| 🤕 **Hurt camera shake**        | Toggle camera tilt/shake effect when taking damage.                                                   |
-| 💣 **TNT Explosion Timer**      | Displays a 3D countdown timer above primed TNT entities.                                              |
-| 🛡️ **Durability Text Overlay**   | Displays precise colored durability text overlay on tools/armor in inventory and hotbar.               |
+## Configuration
 
-## ⚙️ Configuration
+Open the settings through Mod Menu, or via the "DsergMod Settings" button added to the
+Credits and Attribution screen. Settings are also stored in `config/dsergmod.json`.
 
-dsergmod settings are generated from config annotations and can be changed in-game.
+## License
 
-| Method | Description |
-| --- | --- |
-| **ModMenu** *(preferred)* | Config entry inside ModMenu (if installed). |
-| **Credits screen** *(fallback)* | Injected "dsergmod Settings" button in `CreditsAndAttributionScreen`. |
-| **Config file** | `<gameDir>/config/dsergmod.json` — JSON, editable by hand. |
-
-**Main options:**
-
-`gammaMultiplier` · `nightVision` · `pumpkinBlur` · `fireOffset` · `shieldOffset` · `blindnessFog` · `darknessFog` · `lavaFog` · `powderSnowFog` · `waterFog` · `atmosphericFog` · `showMapWhileInBoat` · `fixShieldRiptideTrident` · `ignoreOpGamemodeSwitcher` · `vignette` · `spyglassOverlay` · `autoThirdPersonElytra` · `showScoreboard` · `viewmodelXOffset` · `viewmodelYOffset` · `viewmodelZOffset` · `viewmodelScale` · `entityShadows` · `showWeather` · `hurtTilt` · `tntTimer` · `armorDurabilityText`
-
-**Item scaling** factors (totems, potions, food, shields, etc.) are configured in a separate sub-screen accessible from the main settings screen.
-
-## 📦 Installation
-
-1. Install **Fabric Loader** for **Minecraft 1.21.11**.
-2. Place the dsergmod `.jar` into your Minecraft `mods/` folder.
-3. Ensure **Fabric API** is installed.
-4. Launch Minecraft with the Fabric profile.
-
-## 🛠️ Building from source
-
-This repository ships the compiled mod only. The full source is available upstream:
-
-- Upstream source: [Codeberg → Bactrosaurus/dsergmod](https://codeberg.org/Bactrosaurus/dsergmod)
-
-```bash
-./gradlew build       # produces build/libs/dsergmod-<version>.jar
-./gradlew runClient   # launches a dev Minecraft instance under run/
-```
-
-> **Java 21+ JDK required** on the build PATH (`options.release = 21` in `build.gradle.kts`).
-
----
-
-<div align="center">
-
-Licensed under **LGPL-3.0-only** · Source on [Codeberg](https://codeberg.org/Bactrosaurus/dsergmod)
-
-</div>
+LGPL-3.0. Source is available upstream at https://codeberg.org/Bactrosaurus/dsergmod.
